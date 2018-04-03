@@ -83,6 +83,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.setImage(image: image)
                     cell.stopAnimating()
                     cell.setNeedsLayout()
+                },onError: { error in
+                    cell.stopAnimating()
                 })
                 .disposed(by: disposeBag)
             return cell

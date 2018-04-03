@@ -36,10 +36,14 @@ class NasaPhotoDetailViewController: UIViewController {
         formatter.string(from: photoInfo.date)
         self.date.text = formatter.string(from: photoInfo.date)
         self.textView.text = photoInfo.description
+        loadingIndicator.startAnimating()
+        loadingIndicator.isHidden = false
         ImageCache.shared.imageFor(url: photoInfo.photoUrl)
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { image in
-                self.imageView.image = image
+            .subscribe(onNext: { [weak self] image in
+                self?.loadingIndicator.stopAnimating()
+                self?.loadingIndicator.isHidden = true
+                self?.imageView.image = image
             })
             .disposed(by: disposeBag)
     }
