@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.makeKeyAndVisible()
-        let navVC = UINavigationController(rootViewController: ViewController())
+        let navVC = UINavigationController(rootViewController: HomeViewController())
         navVC.navigationBar.topItem?.title = "NASA APOD"
         window.rootViewController = navVC
         self.window = window

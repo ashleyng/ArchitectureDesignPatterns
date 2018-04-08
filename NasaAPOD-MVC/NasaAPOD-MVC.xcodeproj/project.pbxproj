@@ -17,8 +17,8 @@
 		D871906A206FCADC0067A45C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8719069206FCADC0067A45C /* Assets.xcassets */; };
 		D871906D206FCADC0067A45C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D871906B206FCADC0067A45C /* LaunchScreen.storyboard */; };
 		D8719075206FCB970067A45C /* NasaPhotoInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8719074206FCB970067A45C /* NasaPhotoInfoModel.swift */; };
-		D871907C206FCD780067A45C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871907A206FCD780067A45C /* ViewController.swift */; };
-		D871907D206FCD780067A45C /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D871907B206FCD780067A45C /* ViewController.xib */; };
+		D871907C206FCD780067A45C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871907A206FCD780067A45C /* HomeViewController.swift */; };
+		D871907D206FCD780067A45C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D871907B206FCD780067A45C /* HomeViewController.xib */; };
 		D871907F206FCFE50067A45C /* ApiFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871907E206FCFE50067A45C /* ApiFetcher.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +37,8 @@
 		D871906C206FCADC0067A45C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D871906E206FCADC0067A45C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8719074206FCB970067A45C /* NasaPhotoInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaPhotoInfoModel.swift; sourceTree = "<group>"; };
-		D871907A206FCD780067A45C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D871907B206FCD780067A45C /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		D871907A206FCD780067A45C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D871907B206FCD780067A45C /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		D871907E206FCFE50067A45C /* ApiFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,7 +84,7 @@
 			children = (
 				D81FCE35206FE25D00CCC88F /* NasaPhotoDetailViewController.xib */,
 				D81FCE31206FDA9A00CCC88F /* PhotoInfoCell.xib */,
-				D871907B206FCD780067A45C /* ViewController.xib */,
+				D871907B206FCD780067A45C /* HomeViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -103,7 +103,7 @@
 			children = (
 				D81FCE34206FE25D00CCC88F /* NasaPhotoDetailViewController.swift */,
 				D81FCE30206FDA9900CCC88F /* PhotoInfoCell.swift */,
-				D871907A206FCD780067A45C /* ViewController.swift */,
+				D871907A206FCD780067A45C /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 				D81FCE37206FE25D00CCC88F /* NasaPhotoDetailViewController.xib in Resources */,
 				D81FCE33206FDA9A00CCC88F /* PhotoInfoCell.xib in Resources */,
 				D871906D206FCADC0067A45C /* LaunchScreen.storyboard in Resources */,
-				D871907D206FCD780067A45C /* ViewController.xib in Resources */,
+				D871907D206FCD780067A45C /* HomeViewController.xib in Resources */,
 				D871906A206FCADC0067A45C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,7 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D871907C206FCD780067A45C /* ViewController.swift in Sources */,
+				D871907C206FCD780067A45C /* HomeViewController.swift in Sources */,
 				D8719075206FCB970067A45C /* NasaPhotoInfoModel.swift in Sources */,
 				D871907F206FCFE50067A45C /* ApiFetcher.swift in Sources */,
 				D81FCE32206FDA9A00CCC88F /* PhotoInfoCell.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  NasaAPOD-MVC
 //
 //  Created by Ashley Ng on 3/31/18.
@@ -11,7 +11,7 @@ import RxSwift
 
 let FetchImageCount = 10
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     let disposeBag = DisposeBag()
     var photos = [NasaPhotoInfo]()
     
@@ -25,31 +25,6 @@ class ViewController: UIViewController {
         tableView.isHidden = true
         
         NasaPhotoFetcher().fetchPhotos(count: FetchImageCount)
-            .map { (data: [[String: Any]]) -> [NasaPhotoInfo] in
-                return data.flatMap { object in
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "YYYY-mm-dd"
-                    guard let dateString = object["date"] as? String,
-                        let description = object["explanation"] as? String,
-                        let hdUrlString = object["hdurl"] as? String,
-                        let title = object["title"] as? String,
-                        let urlString = object["url"] as? String else {
-                            return nil
-                    }
-                    guard let date = dateFormatter.date(from: dateString),
-                        let hdUrl = URL(string: hdUrlString),
-                        let url = URL(string: urlString) else {
-                            return nil
-                    }
-                    let copyright: String? = object["copyright"] as? String
-                    return NasaPhotoInfo(date: date,
-                                         description: description,
-                                         hdPhotoUrl: hdUrl,
-                                         photoUrl: url,
-                                         title: title,
-                                         copyright: copyright)
-                }
-            }
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] photoInfo in
                 self?.photos = photoInfo
@@ -66,7 +41,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return photos.count
     }

@@ -13,11 +13,6 @@ class PhotoInfoCell: UITableViewCell {
     @IBOutlet private weak var title: UILabel!
     @IBOutlet private weak var date: UILabel!
     @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
