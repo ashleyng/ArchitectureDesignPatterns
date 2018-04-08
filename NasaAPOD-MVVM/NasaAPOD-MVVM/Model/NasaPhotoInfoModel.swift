@@ -1,8 +1,8 @@
 //
 //  NasaPhotoInfoModel.swift
-//  NasaAPOD-MVC
+//  NasaAPOD-MVVM
 //
-//  Created by Ashley Ng on 3/31/18.
+//  Created by Ashley Ng on 4/7/18.
 //  Copyright © 2018 AshleyNg. All rights reserved.
 //
 
