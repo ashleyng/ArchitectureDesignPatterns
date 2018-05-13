@@ -15,7 +15,22 @@ class HomeViewModel {
     private let photoFetcher: NasaPhotoFetcher
     private let disposeBag = DisposeBag()
     
+    private enum SectionType: Int {
+        case favorite
+        case normal
+        
+        var title: String {
+            switch self {
+            case .favorite:
+                return "Favorites"
+            case .normal:
+                return "Photos"
+            }
+        }
+    }
+    
     private var photoCells = [PhotoInfoViewModel]()
+    private var favoritePhotosCells = [PhotoInfoViewModel]()
     var count: Int {
         return photoCells.count
     }
@@ -44,8 +59,52 @@ class HomeViewModel {
             .disposed(by: disposeBag)
     }
     
-    func getCellViewModel(at index: Int) -> PhotoInfoViewModel {
-        return photoCells[index]
+    func titleForSection(_ section: Int) -> String {
+        if section == SectionType.favorite.rawValue {
+            return SectionType.favorite.title
+        } else {
+            return SectionType.normal.title
+        }
+    }
+    
+    func photosInSection(_ section: Int) -> Int {
+        if section == SectionType.favorite.rawValue {
+            return favoritePhotosCells.count
+        } else {
+            return photoCells.count
+        }
+    }
+    
+    func photoTapped(at indexPath: IndexPath) -> IndexPath {
+        if indexPath.section == SectionType.favorite.rawValue {
+            return self.unfavoritePhoto(at: indexPath.row)
+        } else {
+            return self.favoritePhoto(at: indexPath.row)
+        }
+    }
+    
+    private func favoritePhoto(at index: Int) -> IndexPath {
+        let photo = photoCells[index]
+        favoritePhotosCells.append(photo)
+        photoCells.remove(at: index)
+        photo.favorite = !photo.favorite
+        return IndexPath(row: favoritePhotosCells.count-1, section: SectionType.favorite.rawValue)
+    }
+    
+    private func unfavoritePhoto(at index: Int) -> IndexPath {
+        let photo = favoritePhotosCells[index]
+        photoCells.append(photo)
+        favoritePhotosCells.remove(at: index)
+        photo.favorite = !photo.favorite
+        return IndexPath(row: photoCells.count-1, section: SectionType.normal.rawValue)
+    }
+    
+    func getCellViewModel(at indexPath: IndexPath) -> PhotoInfoViewModel {
+        if indexPath.section == SectionType.favorite.rawValue {
+            return favoritePhotosCells[indexPath.row]
+        } else {
+            return photoCells[indexPath.row]
+        }
     }
     
     private func createCellViewModel(photoInfoModel: NasaPhotoInfo) -> PhotoInfoViewModel {

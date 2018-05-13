@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 fileprivate let ApiKey = ""
-fileprivate let DefaultPhotoCount = 5
+fileprivate let DefaultPhotoCount = 20
 
 class NasaPhotoFetcher {
     
@@ -33,7 +33,7 @@ class NasaPhotoFetcher {
                 return results
             }
             .map { (jsonObject: [[String: Any]]) -> [NasaPhotoInfo] in
-                let photos: [NasaPhotoInfo] = jsonObject.flatMap { object -> NasaPhotoInfo? in
+                let photos: [NasaPhotoInfo] = jsonObject.compactMap { object -> NasaPhotoInfo? in
                     guard let title = object["title"] as? String,
                         let dateString = object["date"] as? String,
                         let description = object["explanation"] as? String,

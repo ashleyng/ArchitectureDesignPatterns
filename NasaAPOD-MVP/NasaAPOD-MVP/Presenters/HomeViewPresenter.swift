@@ -13,6 +13,22 @@ protocol HomeViewInteractor: class {
     func startLoading()
     func stopLoading()
     func setPhotos(_ photos: [NasaPhotoInfo])
+    func favoritePhoto(at index: Int)
+    func removePhotoFromFavorites(at index: Int)
+}
+
+enum SectionType: Int {
+    case favorite
+    case normal
+    
+    var title: String {
+        switch self {
+        case .favorite:
+            return "Favorites"
+        case .normal:
+            return "Photos"
+        }
+    }
 }
 
 let FetchImageCount = 10
@@ -42,6 +58,14 @@ class HomeViewPresenter {
                 self?.viewInteractor?.stopLoading()
             })
             .disposed(by: disposeBag)
+    }
+    
+    func photoTapped(at indexPath: IndexPath) {
+        if indexPath.section == SectionType.favorite.rawValue {
+            viewInteractor?.removePhotoFromFavorites(at: indexPath.row)
+        } else {
+            viewInteractor?.favoritePhoto(at: indexPath.row)
+        }
     }
     
 }

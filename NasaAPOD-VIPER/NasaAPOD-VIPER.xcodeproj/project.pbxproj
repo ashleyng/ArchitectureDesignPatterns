@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6640F2B0D275F455BE078326 /* Pods_NasaAPOD_VIPER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149A284DA86A478A8EF3C501 /* Pods_NasaAPOD_VIPER.framework */; };
+		D875BAE820A8C2CF007ADC4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D875BAE720A8C2CF007ADC4B /* AppDelegate.swift */; };
+		D875BAEA20A8C2CF007ADC4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D875BAE920A8C2CF007ADC4B /* HomeViewController.swift */; };
+		D875BAEF20A8C2D0007ADC4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D875BAEE20A8C2D0007ADC4B /* Assets.xcassets */; };
+		D875BAF220A8C2D0007ADC4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D875BAF020A8C2D0007ADC4B /* LaunchScreen.storyboard */; };
+		D875BAFA20A8C340007ADC4B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D875BAF920A8C340007ADC4B /* HomeViewController.xib */; };
+		D875BB0120A8C3DC007ADC4B /* NasaPhotoInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D875BB0020A8C3DC007ADC4B /* NasaPhotoInfoModel.swift */; };
+		D875BB0320A8C3EB007ADC4B /* ApiFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D875BB0220A8C3EB007ADC4B /* ApiFetcher.swift */; };
+		D875BB0520A8C3F7007ADC4B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D875BB0420A8C3F7007ADC4B /* ImageCache.swift */; };
+		D875BB0720A8C499007ADC4B /* NasaPhotoDataInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D875BB0620A8C499007ADC4B /* NasaPhotoDataInteractorImpl.swift */; };
+		D875BB0920A8C557007ADC4B /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D875BB0820A8C557007ADC4B /* HomeViewPresenter.swift */; };
+		D875BB0C20A8CA0C007ADC4B /* PhotoInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D875BB0A20A8CA0C007ADC4B /* PhotoInfoCell.swift */; };
+		D875BB0D20A8CA0C007ADC4B /* PhotoInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D875BB0B20A8CA0C007ADC4B /* PhotoInfoCell.xib */; };
+		D875BB0F20A8CC4E007ADC4B /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D875BB0E20A8CC4E007ADC4B /* Protocols.swift */; };
+		D875BB1420A8D179007ADC4B /* NasaPhotoWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D875BB1320A8D179007ADC4B /* NasaPhotoWireframe.swift */; };
+		D875BB1920A8E0CE007ADC4B /* NasaPhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D875BB1720A8E0CE007ADC4B /* NasaPhotoDetailViewController.swift */; };
+		D875BB1A20A8E0CE007ADC4B /* NasaPhotoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D875BB1820A8E0CE007ADC4B /* NasaPhotoDetailViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		149A284DA86A478A8EF3C501 /* Pods_NasaAPOD_VIPER.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NasaAPOD_VIPER.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73F63DA10154C3D96FD27564 /* Pods-NasaAPOD-VIPER.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NasaAPOD-VIPER.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NasaAPOD-VIPER/Pods-NasaAPOD-VIPER.debug.xcconfig"; sourceTree = "<group>"; };
+		D3C52C4EE871468A71A24F74 /* Pods-NasaAPOD-VIPER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NasaAPOD-VIPER.release.xcconfig"; path = "Pods/Target Support Files/Pods-NasaAPOD-VIPER/Pods-NasaAPOD-VIPER.release.xcconfig"; sourceTree = "<group>"; };
+		D875BAE420A8C2CF007ADC4B /* NasaAPOD-VIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NasaAPOD-VIPER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D875BAE720A8C2CF007ADC4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D875BAE920A8C2CF007ADC4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D875BAEE20A8C2D0007ADC4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D875BAF120A8C2D0007ADC4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D875BAF320A8C2D0007ADC4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D875BAF920A8C340007ADC4B /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		D875BB0020A8C3DC007ADC4B /* NasaPhotoInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaPhotoInfoModel.swift; sourceTree = "<group>"; };
+		D875BB0220A8C3EB007ADC4B /* ApiFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiFetcher.swift; sourceTree = "<group>"; };
+		D875BB0420A8C3F7007ADC4B /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		D875BB0620A8C499007ADC4B /* NasaPhotoDataInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaPhotoDataInteractorImpl.swift; sourceTree = "<group>"; };
+		D875BB0820A8C557007ADC4B /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
+		D875BB0A20A8CA0C007ADC4B /* PhotoInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoCell.swift; sourceTree = "<group>"; };
+		D875BB0B20A8CA0C007ADC4B /* PhotoInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoInfoCell.xib; sourceTree = "<group>"; };
+		D875BB0E20A8CC4E007ADC4B /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		D875BB1320A8D179007ADC4B /* NasaPhotoWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaPhotoWireframe.swift; sourceTree = "<group>"; };
+		D875BB1720A8E0CE007ADC4B /* NasaPhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaPhotoDetailViewController.swift; sourceTree = "<group>"; };
+		D875BB1820A8E0CE007ADC4B /* NasaPhotoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NasaPhotoDetailViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D875BAE120A8C2CF007ADC4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6640F2B0D275F455BE078326 /* Pods_NasaAPOD_VIPER.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5708EEAA5825B395ED98F650 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				73F63DA10154C3D96FD27564 /* Pods-NasaAPOD-VIPER.debug.xcconfig */,
+				D3C52C4EE871468A71A24F74 /* Pods-NasaAPOD-VIPER.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D4DE9BA8A2CE9F2A18CB24F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				149A284DA86A478A8EF3C501 /* Pods_NasaAPOD_VIPER.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D875BADB20A8C2CF007ADC4B = {
+			isa = PBXGroup;
+			children = (
+				D875BAE620A8C2CF007ADC4B /* NasaAPOD-VIPER */,
+				D875BAE520A8C2CF007ADC4B /* Products */,
+				5708EEAA5825B395ED98F650 /* Pods */,
+				D4DE9BA8A2CE9F2A18CB24F3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D875BAE520A8C2CF007ADC4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D875BAE420A8C2CF007ADC4B /* NasaAPOD-VIPER.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D875BAE620A8C2CF007ADC4B /* NasaAPOD-VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				D875BAFB20A8C383007ADC4B /* View */,
+				D875BAFC20A8C38A007ADC4B /* Interactor */,
+				D875BAFD20A8C393007ADC4B /* Presenter */,
+				D875BAFE20A8C39F007ADC4B /* Entity */,
+				D875BB1220A8D161007ADC4B /* Router */,
+				D875BAFF20A8C3BA007ADC4B /* Util */,
+				D875BAE720A8C2CF007ADC4B /* AppDelegate.swift */,
+				D875BAEE20A8C2D0007ADC4B /* Assets.xcassets */,
+				D875BAF020A8C2D0007ADC4B /* LaunchScreen.storyboard */,
+				D875BAF320A8C2D0007ADC4B /* Info.plist */,
+			);
+			path = "NasaAPOD-VIPER";
+			sourceTree = "<group>";
+		};
+		D875BAFB20A8C383007ADC4B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D875BAE920A8C2CF007ADC4B /* HomeViewController.swift */,
+				D875BAF920A8C340007ADC4B /* HomeViewController.xib */,
+				D875BB0A20A8CA0C007ADC4B /* PhotoInfoCell.swift */,
+				D875BB0B20A8CA0C007ADC4B /* PhotoInfoCell.xib */,
+				D875BB1720A8E0CE007ADC4B /* NasaPhotoDetailViewController.swift */,
+				D875BB1820A8E0CE007ADC4B /* NasaPhotoDetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D875BAFC20A8C38A007ADC4B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D875BB0620A8C499007ADC4B /* NasaPhotoDataInteractorImpl.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D875BAFD20A8C393007ADC4B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D875BB0820A8C557007ADC4B /* HomeViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D875BAFE20A8C39F007ADC4B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				D875BB0020A8C3DC007ADC4B /* NasaPhotoInfoModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		D875BAFF20A8C3BA007ADC4B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D875BB0220A8C3EB007ADC4B /* ApiFetcher.swift */,
+				D875BB0420A8C3F7007ADC4B /* ImageCache.swift */,
+				D875BB0E20A8CC4E007ADC4B /* Protocols.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		D875BB1220A8D161007ADC4B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D875BB1320A8D179007ADC4B /* NasaPhotoWireframe.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D875BAE320A8C2CF007ADC4B /* NasaAPOD-VIPER */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D875BAF620A8C2D0007ADC4B /* Build configuration list for PBXNativeTarget "NasaAPOD-VIPER" */;
+			buildPhases = (
+				FD51FEFBC268061226F01614 /* [CP] Check Pods Manifest.lock */,
+				D875BAE020A8C2CF007ADC4B /* Sources */,
+				D875BAE120A8C2CF007ADC4B /* Frameworks */,
+				D875BAE220A8C2CF007ADC4B /* Resources */,
+				A36E39433787528AE628C0D3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NasaAPOD-VIPER";
+			productName = "NasaAPOD-VIPER";
+			productReference = D875BAE420A8C2CF007ADC4B /* NasaAPOD-VIPER.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D875BADC20A8C2CF007ADC4B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = AshleyNg;
+				TargetAttributes = {
+					D875BAE320A8C2CF007ADC4B = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = D875BADF20A8C2CF007ADC4B /* Build configuration list for PBXProject "NasaAPOD-VIPER" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D875BADB20A8C2CF007ADC4B;
+			productRefGroup = D875BAE520A8C2CF007ADC4B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D875BAE320A8C2CF007ADC4B /* NasaAPOD-VIPER */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D875BAE220A8C2CF007ADC4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D875BB1A20A8E0CE007ADC4B /* NasaPhotoDetailViewController.xib in Resources */,
+				D875BB0D20A8CA0C007ADC4B /* PhotoInfoCell.xib in Resources */,
+				D875BAF220A8C2D0007ADC4B /* LaunchScreen.storyboard in Resources */,
+				D875BAFA20A8C340007ADC4B /* HomeViewController.xib in Resources */,
+				D875BAEF20A8C2D0007ADC4B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A36E39433787528AE628C0D3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NasaAPOD-VIPER/Pods-NasaAPOD-VIPER-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NasaAPOD-VIPER/Pods-NasaAPOD-VIPER-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD51FEFBC268061226F01614 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NasaAPOD-VIPER-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D875BAE020A8C2CF007ADC4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D875BB0520A8C3F7007ADC4B /* ImageCache.swift in Sources */,
+				D875BB0920A8C557007ADC4B /* HomeViewPresenter.swift in Sources */,
+				D875BB1920A8E0CE007ADC4B /* NasaPhotoDetailViewController.swift in Sources */,
+				D875BAEA20A8C2CF007ADC4B /* HomeViewController.swift in Sources */,
+				D875BB0F20A8CC4E007ADC4B /* Protocols.swift in Sources */,
+				D875BB0120A8C3DC007ADC4B /* NasaPhotoInfoModel.swift in Sources */,
+				D875BB0C20A8CA0C007ADC4B /* PhotoInfoCell.swift in Sources */,
+				D875BB1420A8D179007ADC4B /* NasaPhotoWireframe.swift in Sources */,
+				D875BB0320A8C3EB007ADC4B /* ApiFetcher.swift in Sources */,
+				D875BB0720A8C499007ADC4B /* NasaPhotoDataInteractorImpl.swift in Sources */,
+				D875BAE820A8C2CF007ADC4B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D875BAF020A8C2D0007ADC4B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D875BAF120A8C2D0007ADC4B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D875BAF420A8C2D0007ADC4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D875BAF520A8C2D0007ADC4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D875BAF720A8C2D0007ADC4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73F63DA10154C3D96FD27564 /* Pods-NasaAPOD-VIPER.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TCYT7HZQSV;
+				INFOPLIST_FILE = "NasaAPOD-VIPER/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hudl.asheyng.NasaAPOD-VIPER";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D875BAF820A8C2D0007ADC4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3C52C4EE871468A71A24F74 /* Pods-NasaAPOD-VIPER.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TCYT7HZQSV;
+				INFOPLIST_FILE = "NasaAPOD-VIPER/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hudl.asheyng.NasaAPOD-VIPER";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D875BADF20A8C2CF007ADC4B /* Build configuration list for PBXProject "NasaAPOD-VIPER" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D875BAF420A8C2D0007ADC4B /* Debug */,
+				D875BAF520A8C2D0007ADC4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D875BAF620A8C2D0007ADC4B /* Build configuration list for PBXNativeTarget "NasaAPOD-VIPER" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D875BAF720A8C2D0007ADC4B /* Debug */,
+				D875BAF820A8C2D0007ADC4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D875BADC20A8C2CF007ADC4B /* Project object */;
+}

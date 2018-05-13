@@ -1,46 +1,49 @@
 //
 //  HomeViewController.swift
-//  NasaAPOD-MVP
+//  NasaAPOD-VIPER
 //
-//  Created by Ashley Ng on 4/22/18.
+//  Created by Ashley Ng on 5/13/18.
 //  Copyright © 2018 AshleyNg. All rights reserved.
 //
 
 import UIKit
 import RxSwift
 
-class HomeViewController: UIViewController {
-    let disposeBag = DisposeBag()
-    var photos = [NasaPhotoInfo]()
-    var favoritePhotos = [NasaPhotoInfo]()
-    let presenter: HomeViewPresenter
+enum SectionType: Int {
+    case favorite
+    case normal
     
-    @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
-    
-    init(presenter: HomeViewPresenter = HomeViewPresenter()) {
-        self.presenter = presenter
-        super.init(nibName: nil, bundle: nil)
+    var title: String {
+        switch self {
+        case .favorite:
+            return "Favorites"
+        case .normal:
+            return "Photos"
+        }
     }
+}
+
+class HomeViewController: UIViewController, HomeViewInteractor {
+
+    @IBOutlet fileprivate var tableView: UITableView!
+    @IBOutlet fileprivate var activityIndicator: UIActivityIndicatorView!
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    fileprivate var photos = [NasaPhotoInfo]()
+    fileprivate var favoritePhotos = [NasaPhotoInfo]()
+    fileprivate let disposeBag = DisposeBag()
+    fileprivate var presenter: HomeViewPresenterInteractor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.isHidden = true
-        
-        presenter.attachView(view: self)
-        presenter.fetchPhotos()
-        
-        tableView.register(UINib(nibName: "PhotoInfoCell", bundle: nil), forCellReuseIdentifier: "PhotoInfoCell")
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UINib(nibName: "PhotoInfoCell", bundle: nil), forCellReuseIdentifier: "PhotoInfoCell")
+        tableView.isHidden = true
+        presenter?.fetchPhotos()
     }
     
-    deinit {
-        self.presenter.detachView()
+    func attachPresenter(presenter: HomeViewPresenterInteractor) {
+        self.presenter = presenter
     }
 }
 
@@ -90,12 +93,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        let detailsVC = NasaPhotoDetailViewController(photoInfo: photos[indexPath.row])
-        self.navigationController?.pushViewController(detailsVC, animated: true)
+        let photo = indexPath.section == SectionType.favorite.rawValue ? favoritePhotos[indexPath.row] : photos[indexPath.row]
+        presenter?.detailsTapped(forPhoto: photo)
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        presenter.photoTapped(at: indexPath)
+        presenter?.photoTapped(at: indexPath)
         return nil
     }
     
@@ -106,20 +109,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             self.tableView.endUpdates()
         }
     }
-}
-
-extension HomeViewController: HomeViewInteractor {
+    
     func startLoading() {
         DispatchQueue.main.async {
-            self.loadingIndicator.startAnimating()
-            self.loadingIndicator.isHidden = false
+            self.activityIndicator.startAnimating()
+            self.activityIndicator.isHidden = false
         }
     }
     
     func stopLoading() {
         DispatchQueue.main.async {
-            self.loadingIndicator.stopAnimating()
-            self.loadingIndicator.isHidden = true
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
         }
     }
     
@@ -142,4 +143,19 @@ extension HomeViewController: HomeViewInteractor {
             self.tableView.reloadData()
         }
     }
+    
+    func displayFavoritePhoto(at index: Int) {
+        let photo = favoritePhotos[index]
+        self.displayPhoto(photo)
+    }
+    
+    func displayNormalPhoto(at index: Int) {
+        let photo = photos[index]
+        self.displayPhoto(photo)
+    }
+    
+    private func displayPhoto(_ photoInfo: NasaPhotoInfo) {
+        NasaPhotoWireframe.createAndPresentDetailsView(photo: photoInfo, view: self)
+    }
 }
+

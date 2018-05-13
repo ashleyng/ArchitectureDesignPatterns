@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 fileprivate let ApiKey = ""
-fileprivate let DefaultPhotoCount = 5
+fileprivate let DefaultPhotoCount = 20
 
 class NasaPhotoFetcher {
     

@@ -14,6 +14,7 @@ class PhotoInfoViewModel {
     let photoUrl: URL
     let title: String
     let description: String
+    var favorite: Bool = false
     
     private let isLoading: Variable<Bool> = Variable(false)
     var rx_isLoading: Observable<Bool> {
