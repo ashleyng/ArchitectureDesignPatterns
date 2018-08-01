@@ -8,7 +8,7 @@
 
 import Foundation
 
-fileprivate let ApiKey = "AtAcPJ2CbIP8QHf9LSOiQ9kF5tyqWhSh6Y0XKfWt"
+fileprivate let ApiKey = ""
 fileprivate let DefaultPhotoCount = 20
 
 class NasaPhotoFetcher {

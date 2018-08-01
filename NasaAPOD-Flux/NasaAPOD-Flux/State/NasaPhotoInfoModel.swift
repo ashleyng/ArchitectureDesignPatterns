@@ -23,16 +23,26 @@ enum PhotosType: Int {
     
     var title: String {
         switch self {
-        case .favorite:
-            return "Favorites"
-        case .normal:
-            return "Photos"
+        case .favorite: return "Favorites"
+        case .normal: return "Photos"
+        }
+    }
+    var key: String {
+        switch self {
+        case .favorite: return "Favorites"
+        case .normal: return "Photos"
+        }
+    }
+    
+    var opposite: PhotosType {
+        switch self {
+        case .favorite: return .normal
+        case .normal: return .favorite
         }
     }
 }
 
 struct PhotosState {
-    var photos: [NasaPhotoInfo]
-    var favoritePhotos: [NasaPhotoInfo]
+    var photos: [String: [NasaPhotoInfo]]
     var showLoading: Bool
 }

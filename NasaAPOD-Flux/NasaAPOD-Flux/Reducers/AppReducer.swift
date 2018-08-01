@@ -9,5 +9,6 @@
 import ReSwift
 
 func appReducer(action: Action, state: AppState?) -> AppState {
-    return AppState(photosState: favoritePhotoReducer(action: action, state: state?.photosState))
+    return AppState(photosState: favoritePhotoReducer(action: action, state: state?.photosState),
+                    routingState: routingReducer(action: action, state: state?.routingState))
 }

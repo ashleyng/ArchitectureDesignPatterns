@@ -18,5 +18,5 @@ struct UnfavoritePhotoAction: Action {
 
 struct TappedPhotoAction: Action {
     let photoIndexTapped: Int
-    let photoSectionTapped: Int
+    let photoTypeTapped: PhotosType
 }

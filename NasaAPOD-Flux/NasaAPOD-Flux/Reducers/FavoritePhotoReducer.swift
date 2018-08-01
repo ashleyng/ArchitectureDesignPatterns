@@ -9,37 +9,28 @@
 import ReSwift
 
 func favoritePhotoReducer(action: Action, state: PhotosState?) -> PhotosState {
-    var state = state ?? PhotosState(photos: [], favoritePhotos: [], showLoading: false)
+    let emptyPhotos:[String: [NasaPhotoInfo]] = [PhotosType.favorite.key:[], PhotosType.normal.key:[]]
+    var state = state ?? PhotosState(photos: emptyPhotos,showLoading: false)
     
     switch action {
     case _ as FetchPhotosAction:
-        state = PhotosState(photos: [], favoritePhotos: [], showLoading: true)
+        state = PhotosState(photos: emptyPhotos, showLoading: true)
     case let setPhotos as SetPhotoAction:
-        state.photos = setPhotos.photos
+        state.photos[PhotosType.normal.key] = setPhotos.photos
         state.showLoading = false
-    case let favoritePhoto as FavoritePhotoAction:
-        let photoToFavorite = state.photos[favoritePhoto.photoIndexToFavorite]
-        state.photos = removeFromPhotos(index: favoritePhoto.photoIndexToFavorite, photos: state.photos)
-        state.favoritePhotos = addPhoto(photo: photoToFavorite, photos: state.favoritePhotos)
-    case let unfavoritePhoto as UnfavoritePhotoAction:
-        let photoToUnfavorite = state.favoritePhotos[unfavoritePhoto.photoIndexToUnfavorite]
-        state.favoritePhotos = removeFromPhotos(index: unfavoritePhoto.photoIndexToUnfavorite, photos: state.favoritePhotos)
-        state.photos = addPhoto(photo: photoToUnfavorite, photos: state.photos)
+    case let photoTapped as TappedPhotoAction:
+        state.photos = updatePhotos(index: photoTapped.photoIndexTapped, typeTapped: photoTapped.photoTypeTapped, photos: state.photos)
     default: break
     }
     return state
 }
 
-
-func removeFromPhotos(index: Int, photos: [NasaPhotoInfo]) -> [NasaPhotoInfo] {
+func updatePhotos(index: Int, typeTapped: PhotosType, photos: [String: [NasaPhotoInfo]]) -> [String: [NasaPhotoInfo]] {
     var photosCopy = photos
-    photosCopy.remove(at: index)
-    return photosCopy
-}
-
-func addPhoto(photo: NasaPhotoInfo, photos: [NasaPhotoInfo]) -> [NasaPhotoInfo] {
-    var photosCopy = photos
-    photosCopy.append(photo)
+    guard let photoRemoved = photosCopy[typeTapped.key]?.remove(at: index) else {
+        return photos
+    }
+    photosCopy[typeTapped.opposite.key]?.append(photoRemoved)
     return photosCopy
 }
 

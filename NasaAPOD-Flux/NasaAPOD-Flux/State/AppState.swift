@@ -10,4 +10,5 @@ import ReSwift
 
 struct AppState: StateType {
     let photosState: PhotosState
+    let routingState: RoutingState
 }

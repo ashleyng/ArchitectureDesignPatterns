@@ -12,8 +12,6 @@ import ReSwift
 let FetchImageCount = 10
 
 class HomeViewController: UIViewController {
-    var photos = [NasaPhotoInfo]()
-    var favoritePhotos = [NasaPhotoInfo]()
     var tableDataSource: TableDataSource<PhotoInfoCell, NasaPhotoInfo>?
     
     @IBOutlet private weak var tableView: UITableView!
@@ -27,6 +25,8 @@ class HomeViewController: UIViewController {
                 $0.photosState
             }
         }
+        
+        store.dispatch(RoutingAction(destination: .home))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,18 +63,19 @@ extension HomeViewController: UITableViewDelegate {
         return 100
     }
 
-//    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-//        let detailsVC = NasaPhotoDetailViewController(photoInfo: photos[indexPath.row])
-//        self.navigationController?.pushViewController(detailsVC, animated: true)
-//    }
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        guard let photoType = PhotosType(rawValue: indexPath.section) else {
+            return
+        }
+        store.dispatch(RoutingAction(destination: .details(index: indexPath.row, photoType: photoType)))
+    }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        tableView.beginUpdates()
-        if indexPath.section == PhotosType.normal.rawValue {
-            store.dispatch(FavoritePhotoAction(photoIndexToFavorite: indexPath.row))
-        } else {
-            store.dispatch(UnfavoritePhotoAction(photoIndexToUnfavorite: indexPath.row))
+        guard let photoType = PhotosType(rawValue: indexPath.section) else {
+            return nil
         }
+        tableView.beginUpdates()
+        store.dispatch(TappedPhotoAction(photoIndexTapped: indexPath.row, photoTypeTapped: photoType))
         tableView.endUpdates()
         return nil
     }
@@ -83,19 +84,19 @@ extension HomeViewController: UITableViewDelegate {
 extension HomeViewController: StoreSubscriber {
     func newState(state: PhotosState) {
         DispatchQueue.main.async {
-            self.tableDataSource?.sectionOneModel = state.favoritePhotos
-            self.tableDataSource?.sectionTwoModel = state.photos
-            self.tableView.reloadData()
-            
-            if state.showLoading {
-                self.loadingIndicator.isHidden = false
-                self.loadingIndicator.startAnimating()
-                self.tableView.isHidden = true
-            } else {
-                self.loadingIndicator.isHidden = true
-                self.loadingIndicator.stopAnimating()
-                self.tableView.isHidden = false
+            defer {
+                self.loadingIndicator.isHidden = !state.showLoading
+                state.showLoading ? self.loadingIndicator.startAnimating() : self.loadingIndicator.stopAnimating()
+                self.tableView.isHidden = state.showLoading
             }
+            
+            guard let sectionOneModel = state.photos[PhotosType.favorite.key],
+                let sectionTwoModel = state.photos[PhotosType.normal.key] else {
+                    return
+            }
+            self.tableDataSource?.sectionOneModel = sectionOneModel
+            self.tableDataSource?.sectionTwoModel = sectionTwoModel
+            self.tableView.reloadData()
         }
     }
 }

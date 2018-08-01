@@ -28,6 +28,10 @@
 		D80B780620FAD52C00D64FAD /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B780520FAD52C00D64FAD /* AppState.swift */; };
 		D80B780820FAD56300D64FAD /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B780720FAD56300D64FAD /* AppReducer.swift */; };
 		D80B780A20FADBB100D64FAD /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B780920FADBB100D64FAD /* TableDataSource.swift */; };
+		D80B780C20FAF52500D64FAD /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B780B20FAF52500D64FAD /* AppRouter.swift */; };
+		D80B780E20FAF59D00D64FAD /* RoutingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B780D20FAF59D00D64FAD /* RoutingState.swift */; };
+		D80B781020FAF62600D64FAD /* RoutingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B780F20FAF62600D64FAD /* RoutingReducer.swift */; };
+		D80B781220FAF65B00D64FAD /* RoutingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B781120FAF65B00D64FAD /* RoutingAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,10 @@
 		D80B780520FAD52C00D64FAD /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D80B780720FAD56300D64FAD /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		D80B780920FADBB100D64FAD /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
+		D80B780B20FAF52500D64FAD /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		D80B780D20FAF59D00D64FAD /* RoutingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingState.swift; sourceTree = "<group>"; };
+		D80B780F20FAF62600D64FAD /* RoutingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingReducer.swift; sourceTree = "<group>"; };
+		D80B781120FAF65B00D64FAD /* RoutingAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingAction.swift; sourceTree = "<group>"; };
 		DBA87762C234EC7F17594D46 /* Pods-NasaAPOD-FluxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NasaAPOD-FluxTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NasaAPOD-FluxTests/Pods-NasaAPOD-FluxTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,11 +134,12 @@
 		D80B77C720FACF1B00D64FAD /* NasaAPOD-Flux */ = {
 			isa = PBXGroup;
 			children = (
-				D80B780420FAD51C00D64FAD /* State */,
-				D80B77FF20FAD47700D64FAD /* Reducers */,
 				D80B77FC20FAD42300D64FAD /* Actions */,
-				D80B77F720FAD14800D64FAD /* ViewController */,
+				D80B77FF20FAD47700D64FAD /* Reducers */,
+				D80B780420FAD51C00D64FAD /* State */,
 				D80B77EC20FAD05700D64FAD /* Util */,
+				D80B77F720FAD14800D64FAD /* ViewController */,
+				D80B781320FAF7A000D64FAD /* Views */,
 				D80B77C820FACF1B00D64FAD /* AppDelegate.swift */,
 				D80B77CF20FACF1D00D64FAD /* Assets.xcassets */,
 				D80B77D120FACF1D00D64FAD /* LaunchScreen.storyboard */,
@@ -154,6 +163,7 @@
 				D80B77ED20FAD06500D64FAD /* ApiFetcher.swift */,
 				D80B77EF20FAD07B00D64FAD /* ImageCache.swift */,
 				D80B780920FADBB100D64FAD /* TableDataSource.swift */,
+				D80B780B20FAF52500D64FAD /* AppRouter.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -161,12 +171,9 @@
 		D80B77F720FAD14800D64FAD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D80B77F420FAD0B800D64FAD /* PhotoInfoCell.xib */,
-				D80B77E920FACFCE00D64FAD /* HomeViewController.xib */,
 				D80B77E820FACFCE00D64FAD /* HomeViewController.swift */,
 				D80B77F320FAD0B800D64FAD /* PhotoInfoCell.swift */,
 				D80B77F820FAD18700D64FAD /* NasaPhotoDetailViewController.swift */,
-				D80B77F920FAD18700D64FAD /* NasaPhotoDetailViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -176,6 +183,7 @@
 			children = (
 				D80B77FD20FAD43C00D64FAD /* FavoriteAction.swift */,
 				D80B780220FAD4D400D64FAD /* FetchPhotosAction.swift */,
+				D80B781120FAF65B00D64FAD /* RoutingAction.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -185,6 +193,7 @@
 			children = (
 				D80B780020FAD48A00D64FAD /* FavoritePhotoReducer.swift */,
 				D80B780720FAD56300D64FAD /* AppReducer.swift */,
+				D80B780F20FAF62600D64FAD /* RoutingReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -194,8 +203,19 @@
 			children = (
 				D80B77F120FAD09000D64FAD /* NasaPhotoInfoModel.swift */,
 				D80B780520FAD52C00D64FAD /* AppState.swift */,
+				D80B780D20FAF59D00D64FAD /* RoutingState.swift */,
 			);
 			path = State;
+			sourceTree = "<group>";
+		};
+		D80B781320FAF7A000D64FAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D80B77F420FAD0B800D64FAD /* PhotoInfoCell.xib */,
+				D80B77E920FACFCE00D64FAD /* HomeViewController.xib */,
+				D80B77F920FAD18700D64FAD /* NasaPhotoDetailViewController.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E3CE08D1E5222EB7469B7034 /* Frameworks */ = {
@@ -419,12 +439,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D80B77F020FAD07B00D64FAD /* ImageCache.swift in Sources */,
+				D80B781020FAF62600D64FAD /* RoutingReducer.swift in Sources */,
 				D80B77F220FAD09000D64FAD /* NasaPhotoInfoModel.swift in Sources */,
 				D80B77F520FAD0B800D64FAD /* PhotoInfoCell.swift in Sources */,
+				D80B780E20FAF59D00D64FAD /* RoutingState.swift in Sources */,
 				D80B780620FAD52C00D64FAD /* AppState.swift in Sources */,
+				D80B780C20FAF52500D64FAD /* AppRouter.swift in Sources */,
 				D80B77C920FACF1B00D64FAD /* AppDelegate.swift in Sources */,
 				D80B77FE20FAD43C00D64FAD /* FavoriteAction.swift in Sources */,
 				D80B780A20FADBB100D64FAD /* TableDataSource.swift in Sources */,
+				D80B781220FAF65B00D64FAD /* RoutingAction.swift in Sources */,
 				D80B780820FAD56300D64FAD /* AppReducer.swift in Sources */,
 				D80B77FA20FAD18700D64FAD /* NasaPhotoDetailViewController.swift in Sources */,
 				D80B77EE20FAD06500D64FAD /* ApiFetcher.swift in Sources */,
