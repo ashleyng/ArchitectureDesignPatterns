@@ -6,10 +6,10 @@ A blog post was written on each pattern (except MVC, since each post is comparin
 
 ## Patterns Used
   - Model-View-Controller (MVC)
-  - [Model-View-ViewModel (MVVM)](https://medium.com/@shley_ng/architecture-design-patterns-mvvm)
-  - [Model-View-Presenter (MVP)](https://medium.com/@shley_ng/architecture-design-patterns-mvp)
-  - [Clean Architecture or VIPER](https://medium.com/@shley_ng/architecture-design-patterns-viper)
-  - [Flux](https://medium.com/@shley_ng/architecture-design-patterns-flux)
+  - [Model-View-ViewModel (MVVM)](https://medium.com/@shley_ng/architecture-design-patterns-mvvm-aa8fb0ec8f1e)
+  - [Model-View-Presenter (MVP)](https://medium.com/@shley_ng/architecture-design-patterns-mvp-da44690a8d69)
+  - [Clean Architecture or VIPER](https://medium.com/@shley_ng/architecture-design-patterns-viper-d8ade20795de)
+  - [Flux](https://medium.com/@shley_ng/architecture-design-patterns-flux-7b6eb6ea2635)
  
 ## Build and Run Applications
   1. [Generate an API key](https://api.nasa.gov/index.html#apply-for-an-api-key)
