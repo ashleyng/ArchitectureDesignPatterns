@@ -10,6 +10,7 @@ A blog post was written on each pattern (except MVC, since each post is comparin
   - [Model-View-Presenter (MVP)](https://medium.com/@shley_ng/architecture-design-patterns-mvp-da44690a8d69)
   - [Clean Architecture or VIPER](https://medium.com/@shley_ng/architecture-design-patterns-viper-d8ade20795de)
   - [Flux](https://medium.com/@shley_ng/architecture-design-patterns-flux-7b6eb6ea2635)
+  - [Facade](https://medium.com/@shley_ng/architecture-design-patterns-facade-b1af5ae1b2c0)
  
 ## Build and Run Applications
   1. [Generate an API key](https://api.nasa.gov/index.html#apply-for-an-api-key)
