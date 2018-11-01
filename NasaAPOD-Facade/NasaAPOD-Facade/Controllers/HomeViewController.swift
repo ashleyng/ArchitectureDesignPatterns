@@ -106,10 +106,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 100
     }
     
-//    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-//        let detailsVC = NasaPhotoDetailViewController(photoInfo: photos[indexPath.row])
-//        self.navigationController?.pushViewController(detailsVC, animated: true)
-//    }
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        var photo: NasaPhotoInfo
+        if indexPath.section == SectionType.normal.rawValue {
+            photo = photos[indexPath.row]
+        } else {
+            photo = favoritePhotos[indexPath.row]
+        }
+        let detailsVC = NasaPhotoDetailViewController(photoInfo: photo, apiFacade: facade)
+        self.navigationController?.pushViewController(detailsVC, animated: true)
+    }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         tableView.beginUpdates()

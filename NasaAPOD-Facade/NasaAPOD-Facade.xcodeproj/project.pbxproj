@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		90D2D226AA32498982992D56 /* Pods_NasaAPOD_Facade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC204891A03B80628681C57 /* Pods_NasaAPOD_Facade.framework */; };
+		D86D0CE3218B4ED10050EB27 /* NasaPhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86D0CE1218B4ED10050EB27 /* NasaPhotoDetailViewController.swift */; };
+		D86D0CE4218B4ED10050EB27 /* NasaPhotoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86D0CE2218B4ED10050EB27 /* NasaPhotoDetailViewController.xib */; };
 		D8F0586421669E2900F8098E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F0586321669E2900F8098E /* AppDelegate.swift */; };
 		D8F0586B21669E2B00F8098E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8F0586A21669E2B00F8098E /* Assets.xcassets */; };
 		D8F0586E21669E2B00F8098E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8F0586C21669E2B00F8098E /* LaunchScreen.storyboard */; };
@@ -15,7 +17,6 @@
 		D8F0587821669E6300F8098E /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F0587621669E6300F8098E /* HomeViewController.xib */; };
 		D8F0587C21669FC200F8098E /* NasaPhotoInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F0587B21669FC200F8098E /* NasaPhotoInfoModel.swift */; };
 		D8F058862166A15D00F8098E /* ApiFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F058852166A15D00F8098E /* ApiFetcher.swift */; };
-		D8F058882166A17000F8098E /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F058872166A17000F8098E /* ImageCache.swift */; };
 		D8F0588E2166A23A00F8098E /* PhotoInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F0588C2166A23A00F8098E /* PhotoInfoCell.swift */; };
 		D8F0588F2166A23A00F8098E /* PhotoInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F0588D2166A23A00F8098E /* PhotoInfoCell.xib */; };
 		D8F058912166A2ED00F8098E /* ApiFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F058902166A2ED00F8098E /* ApiFacade.swift */; };
@@ -24,6 +25,8 @@
 /* Begin PBXFileReference section */
 		2DC204891A03B80628681C57 /* Pods_NasaAPOD_Facade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NasaAPOD_Facade.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B235C1E8A611398CD1193C3 /* Pods-NasaAPOD-Facade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NasaAPOD-Facade.release.xcconfig"; path = "Pods/Target Support Files/Pods-NasaAPOD-Facade/Pods-NasaAPOD-Facade.release.xcconfig"; sourceTree = "<group>"; };
+		D86D0CE1218B4ED10050EB27 /* NasaPhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaPhotoDetailViewController.swift; sourceTree = "<group>"; };
+		D86D0CE2218B4ED10050EB27 /* NasaPhotoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NasaPhotoDetailViewController.xib; sourceTree = "<group>"; };
 		D8F0586021669E2900F8098E /* NasaAPOD-Facade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NasaAPOD-Facade.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F0586321669E2900F8098E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8F0586A21669E2B00F8098E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,7 +36,6 @@
 		D8F0587621669E6300F8098E /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		D8F0587B21669FC200F8098E /* NasaPhotoInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaPhotoInfoModel.swift; sourceTree = "<group>"; };
 		D8F058852166A15D00F8098E /* ApiFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiFetcher.swift; sourceTree = "<group>"; };
-		D8F058872166A17000F8098E /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		D8F0588C2166A23A00F8098E /* PhotoInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoInfoCell.swift; path = ../PhotoInfoCell.swift; sourceTree = "<group>"; };
 		D8F0588D2166A23A00F8098E /* PhotoInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoInfoCell.xib; sourceTree = "<group>"; };
 		D8F058902166A2ED00F8098E /* ApiFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiFacade.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				D8F0587621669E6300F8098E /* HomeViewController.xib */,
 				D8F0588D2166A23A00F8098E /* PhotoInfoCell.xib */,
+				D86D0CE2218B4ED10050EB27 /* NasaPhotoDetailViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -116,6 +119,7 @@
 			children = (
 				D8F0587521669E6300F8098E /* HomeViewController.swift */,
 				D8F0588C2166A23A00F8098E /* PhotoInfoCell.swift */,
+				D86D0CE1218B4ED10050EB27 /* NasaPhotoDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -133,7 +137,6 @@
 			children = (
 				D8F058902166A2ED00F8098E /* ApiFacade.swift */,
 				D8F058852166A15D00F8098E /* ApiFetcher.swift */,
-				D8F058872166A17000F8098E /* ImageCache.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D86D0CE4218B4ED10050EB27 /* NasaPhotoDetailViewController.xib in Resources */,
 				D8F0588F2166A23A00F8098E /* PhotoInfoCell.xib in Resources */,
 				D8F0586E21669E2B00F8098E /* LaunchScreen.storyboard in Resources */,
 				D8F0586B21669E2B00F8098E /* Assets.xcassets in Resources */,
@@ -253,11 +257,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8F058882166A17000F8098E /* ImageCache.swift in Sources */,
 				D8F0586421669E2900F8098E /* AppDelegate.swift in Sources */,
 				D8F0588E2166A23A00F8098E /* PhotoInfoCell.swift in Sources */,
 				D8F058862166A15D00F8098E /* ApiFetcher.swift in Sources */,
 				D8F0587C21669FC200F8098E /* NasaPhotoInfoModel.swift in Sources */,
+				D86D0CE3218B4ED10050EB27 /* NasaPhotoDetailViewController.swift in Sources */,
 				D8F058912166A2ED00F8098E /* ApiFacade.swift in Sources */,
 				D8F0587721669E6300F8098E /* HomeViewController.swift in Sources */,
 			);
